@@ -1,0 +1,9 @@
+The program creates a RDD and a DataFrame containing an array of integers.  It then performs a simple map operation
+to add 1 to every element as a normal spark program would do, and shows the result.  It then does the same thing, 
+adding 1 to every element, but through JNI, passing the RDD partitions as an array through JNI to some C++ code, 
+which performs the addition, and then returns a new array for the output of the map step.  This is then printed, 
+and should match the output of the previous map operation.  The same task is then repeated for a DataFrame in place 
+of the RDD (not yet completed).
+
+There are scripts to build the program locally, run in local mode, and run in distributed mode.  You should modify the first 
+line or two to point to your own instalation of Scala and Spark.
